@@ -2,32 +2,62 @@ import peasy.*;
 
 PeasyCam camera;
 Cube cube;
+boolean drawing;
+String rotate;
 
 void setup() {
   size(500, 500, P3D);
-  camera = new PeasyCam(this, 50, 50, 50, 300);
+  camera = new PeasyCam(this, 300);
   cube = new Cube();
+  //cube.shuffle();
+  drawing = false;
 }
 
+int inverse = 0;
+int ang = 0;
 void draw() {
-  background(151);
-  cube.show();
+  if(drawing) {
+    background(151);
+    drawTurn();
+  } else {
+    computeTurn();
+    drawing=true;
+  }
+}
+
+void computeTurn() {
+  //if(inverse < 42) {
+  //  rotate = cube.shuffle.get(41-inverse);
+  //  cube.stringToReverseRotate(rotate);
+  //  inverse++;
+  //  ang = 90;
+  //}
+}
+
+void drawTurn() {
+  if(ang > 0) {
+    cube.animateRotate(rotate, ang);
+    ang--;
+  } else {
+    cube.show();
+    drawing = false;
+  }
 }
 
 void keyPressed() {
   println(keyCode);
   switch(keyCode) {
-    case 81: cube.rotUp(-PI/2); break;
-    case 87: cube.rotUp(PI/2); break;
-    case 65: cube.rotDown(-PI/2); break;
-    case 83: cube.rotDown(PI/2); break;
-    case 69: cube.rotLeft(-PI/2); break;
-    case 68: cube.rotLeft(PI/2); break;
-    case 82: cube.rotRight(-PI/2); break;
-    case 70: cube.rotRight(PI/2); break;
-    case 90: cube.rotFront(-PI/2); break;
-    case 88: cube.rotFront(PI/2); break;
-    case 67: cube.rotBack(-PI/2); break;
-    case 86: cube.rotBack(PI/2); break;
+    case 81: cube.rotUp(-PI/2); rotate = "CUP";ang = 90; break;
+    case 87: cube.rotUp(PI/2); ang = 90; rotate = "UP"; break;
+    case 65: cube.rotDown(-PI/2); ang = 90; rotate = "CDOWN"; break;
+    case 83: cube.rotDown(PI/2); ang = 90; rotate = "DOWN"; break;
+    case 69: cube.rotLeft(-PI/2); ang = 90; rotate = "CLEFT"; break;
+    case 68: cube.rotLeft(PI/2); ang = 90; rotate = "LEFT"; break;
+    case 82: cube.rotRight(-PI/2); ang = 90; rotate = "CRIGHT"; break;
+    case 70: cube.rotRight(PI/2); ang = 90; rotate = "RIGHT"; break;
+    case 90: cube.rotFront(-PI/2); ang = 90; rotate = "CFRONT"; break;
+    case 88: cube.rotFront(PI/2); ang = 90; rotate = "FRONT"; break;
+    case 67: cube.rotBack(-PI/2); ang = 90; rotate = "CBACK"; break;
+    case 86: cube.rotBack(PI/2); ang = 90; rotate = "BACK"; break;
   }
 }

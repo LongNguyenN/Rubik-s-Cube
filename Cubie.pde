@@ -37,7 +37,7 @@ class Cubie {
   
   void show() {
     pushMatrix();
-    translate(pos.x+size, pos.y+size, pos.z+size);
+    translate(pos.x, pos.y, pos.z);
     rotateX(angX);
     rotateY(angY);
     rotateZ(angZ);
@@ -59,17 +59,14 @@ class Cubie {
   
   void rotX(float ang) {
     this.angX = ang+angX;
-    println(angX);
   }
   
   void rotY(float ang) {
     this.angY = ang+angY;
-    println(angY);
   }
   
   void rotZ(float ang) {
     this.angZ = ang+angZ;
-    println(angZ);
   }
   
 }
