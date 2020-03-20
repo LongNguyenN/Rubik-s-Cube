@@ -302,31 +302,32 @@ class Cube {
     }
   }
   
-  void animateRotate(String rotate, int ang) {
+  void animateRotate(String rotate, float ang) {
+    ang = radians(ang);
     switch(rotate) {
-      case "UP": animateRotateUp(ang);
+      case "UP": animateRotateUp(-ang);
       break;
       case "CUP": animateRotateUp(ang);
       break;
-      case "DOWN": animateRotateDown(ang);
+      case "DOWN": animateRotateDown(-ang);
       break;
       case "CDOWN": animateRotateDown(ang);
       break;
-      case "LEFT": animateRotateLeft(ang);
+      case "LEFT": animateRotateLeft(-ang);
       break;
       case "CLEFT": animateRotateLeft(ang);
       break;
-      case "RIGHT": animateRotateRight(ang);
+      case "RIGHT": animateRotateRight(-ang);
       break;
       case "CRIGHT": animateRotateRight(ang);
       break;
-      case "FRONT": animateRotateFront(ang);
+      case "FRONT": animateRotateBack(-ang);
       break;
-      case "CFRONT": animateRotateFront(ang);
+      case "CFRONT": animateRotateBack(ang);
       break;
-      case "BACK": animateRotateBack(ang);
+      case "BACK": animateRotateFront(-ang);
       break;
-      case "CBACK": animateRotateBack(ang);
+      case "CBACK": animateRotateFront(ang);
       break;
       default: println("not a valid rotate");
       break;

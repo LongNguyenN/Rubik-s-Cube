@@ -36,7 +36,7 @@ void computeTurn() {
 
 void drawTurn() {
   if(ang > 0) {
-    cube.animateRotate(rotate, ang);
+    cube.animateRotate(rotate, 3*ang);
     ang--;
   } else {
     cube.show();
@@ -47,17 +47,17 @@ void drawTurn() {
 void keyPressed() {
   println(keyCode);
   switch(keyCode) {
-    case 81: cube.rotUp(-PI/2); rotate = "CUP";ang = 90; break;
-    case 87: cube.rotUp(PI/2); ang = 90; rotate = "UP"; break;
-    case 65: cube.rotDown(-PI/2); ang = 90; rotate = "CDOWN"; break;
-    case 83: cube.rotDown(PI/2); ang = 90; rotate = "DOWN"; break;
-    case 69: cube.rotLeft(-PI/2); ang = 90; rotate = "CLEFT"; break;
-    case 68: cube.rotLeft(PI/2); ang = 90; rotate = "LEFT"; break;
-    case 82: cube.rotRight(-PI/2); ang = 90; rotate = "CRIGHT"; break;
-    case 70: cube.rotRight(PI/2); ang = 90; rotate = "RIGHT"; break;
-    case 90: cube.rotFront(-PI/2); ang = 90; rotate = "CFRONT"; break;
-    case 88: cube.rotFront(PI/2); ang = 90; rotate = "FRONT"; break;
-    case 67: cube.rotBack(-PI/2); ang = 90; rotate = "CBACK"; break;
-    case 86: cube.rotBack(PI/2); ang = 90; rotate = "BACK"; break;
+    case 81: cube.rotUp(-PI/2); ang = 30; rotate = "CUP"; break;
+    case 87: cube.rotUp(PI/2); ang = 30; rotate = "UP"; break;
+    case 65: cube.rotDown(-PI/2); ang = 30; rotate = "CDOWN"; break;
+    case 83: cube.rotDown(PI/2); ang = 30; rotate = "DOWN"; break;
+    case 69: cube.rotLeft(-PI/2); ang = 30; rotate = "CLEFT"; break;
+    case 68: cube.rotLeft(PI/2); ang = 30; rotate = "LEFT"; break;
+    case 82: cube.rotRight(-PI/2); ang = 30; rotate = "CRIGHT"; break;
+    case 70: cube.rotRight(PI/2); ang = 30; rotate = "RIGHT"; break;
+    case 90: cube.rotFront(-PI/2); ang = 30; rotate = "CFRONT"; break;
+    case 88: cube.rotFront(PI/2); ang = 30; rotate = "FRONT"; break;
+    case 67: cube.rotBack(-PI/2); ang = 30; rotate = "CBACK"; break;
+    case 86: cube.rotBack(PI/2); ang = 30; rotate = "BACK"; break;
   }
 }

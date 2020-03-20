@@ -4,7 +4,7 @@ class Cubie {
   Tile[] tiles;
   PVector pos = new PVector();
   PVector col = new PVector();
-  float angX, angY, angZ;
+  PVector ang = new PVector();
   int size = 50;
   
   Cubie(PVector pos, PVector col) {
@@ -38,9 +38,9 @@ class Cubie {
   void show() {
     pushMatrix();
     translate(pos.x, pos.y, pos.z);
-    rotateX(angX);
-    rotateY(angY);
-    rotateZ(angZ);
+    rotateX(ang.x);
+    rotateY(ang.y);
+    rotateZ(ang.z);
     for(int i=0; i < tiles.length; i++) {
       tiles[i].show();
     }
@@ -58,15 +58,15 @@ class Cubie {
   }
   
   void rotX(float ang) {
-    this.angX = ang+angX;
+    this.ang.x = this.ang.x+ang;
   }
   
   void rotY(float ang) {
-    this.angY = ang+angY;
+    this.ang.y = this.ang.y+ang;
   }
   
   void rotZ(float ang) {
-    this.angZ = ang+angZ;
+    this.ang.z = this.ang.z+ang;
   }
   
 }
