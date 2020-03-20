@@ -9,7 +9,7 @@ void setup() {
   size(500, 500, P3D);
   camera = new PeasyCam(this, 300);
   cube = new Cube();
-  //cube.shuffle();
+  cube.shuffle();
   drawing = false;
 }
 
@@ -17,7 +17,7 @@ int inverse = 0;
 int ang = 0;
 void draw() {
   if(drawing) {
-    background(151);
+    background(155);
     drawTurn();
   } else {
     computeTurn();
@@ -26,12 +26,12 @@ void draw() {
 }
 
 void computeTurn() {
-  //if(inverse < 42) {
-  //  rotate = cube.shuffle.get(41-inverse);
-  //  cube.stringToReverseRotate(rotate);
-  //  inverse++;
-  //  ang = 90;
-  //}
+  if(inverse < 42) {
+    rotate = cube.shuffle.get(41-inverse);
+    cube.stringToReverseRotate(rotate);
+    inverse++;
+    ang = 30;
+  }
 }
 
 void drawTurn() {

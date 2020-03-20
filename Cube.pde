@@ -36,7 +36,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.y - -cube[i].size) < 0.005) {
         cube[i].pos = rotateY.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotY(ang);
+        cube[i].rotY(ang, rotateY);
       }
     }
   }
@@ -64,7 +64,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.y - cube[i].size) < 0.005) {
         cube[i].pos = rotateY.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotY(ang);
+        cube[i].rotY(ang, rotateY);
       }
     }
   }
@@ -91,7 +91,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.x - -cube[i].size) < 0.005) {
         cube[i].pos = rotateX.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotX(ang);
+        cube[i].rotX(ang, rotateX);
       }
     }
   }
@@ -118,7 +118,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.x - cube[i].size) < 0.005) {
         cube[i].pos = rotateX.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotX(ang);
+        cube[i].rotX(ang, rotateX);
       }
     }
   }
@@ -145,7 +145,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.z - cube[i].size) < 0.005) {
         cube[i].pos = rotateZ.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotZ(ang);
+        cube[i].rotZ(ang, rotateZ);
       }
     }
   }
@@ -172,7 +172,7 @@ class Cube {
     for(int i=0; i < cube.length; i++){
       if(abs(cube[i].pos.z - -cube[i].size) < 0.005) {
         cube[i].pos = rotateZ.mult(cube[i].pos, cube[i].pos);
-        cube[i].rotZ(ang);
+        cube[i].rotZ(ang, rotateZ);
       }
     }
   }
