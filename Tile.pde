@@ -1,12 +1,15 @@
 
 class Tile {
   
-  PVector pos;
+  PVector localPos;
   int r,g,b;
   int size;
   
-  public Tile(PVector pos) {
-    this.pos = pos;
+  public Tile(int x, int y, int z) {
+    this.localPos = new PVector();
+    this.localPos.x = x;
+    this.localPos.y = y;
+    this.localPos.z = z;
     size = 50;
   }
   
@@ -20,11 +23,11 @@ class Tile {
     rectMode(CENTER);
     fill(r,g,b);
     pushMatrix();
-    translate(pos.x*size/2,pos.y*size/2,pos.z*size/2);
-    if(abs(pos.x) > 0.05) {
+    translate(localPos.x*size/2,localPos.y*size/2,localPos.z*size/2);
+    if(abs(localPos.x) > 0.05) {
       rotateY(PI/2);
     }
-    if(abs(pos.y) > 0.05) {
+    if(abs(localPos.y) > 0.05) {
       rotateX(PI/2);
     }
     rect(0, 0, size, size);
