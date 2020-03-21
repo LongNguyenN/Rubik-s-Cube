@@ -4,6 +4,8 @@ PeasyCam camera;
 Cube cube;
 boolean drawing;
 String rotate;
+int inverse = 0;
+int ang = 0;
 
 void setup() {
   size(500, 500, P3D);
@@ -13,8 +15,6 @@ void setup() {
   drawing = false;
 }
 
-int inverse = 0;
-int ang = 0;
 void draw() {
   if(drawing) {
     background(155);

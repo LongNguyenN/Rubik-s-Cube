@@ -16,22 +16,22 @@ class Cubie {
   
   void setTiles() {
     //white
-    tiles[0] = new Tile(0,0,-1);
+    tiles[0] = new Tile(new PVector(0,0,-1));
     tiles[0].setColor(255, 255, 255);
     //yellow
-    tiles[1] = new Tile(0,0,1);
+    tiles[1] = new Tile(new PVector(0,0,1));
     tiles[1].setColor(255, 255, 0);
     //orange
-    tiles[2] = new Tile(-1,0,0);
+    tiles[2] = new Tile(new PVector(-1,0,0));
     tiles[2].setColor(255, 160, 0);
     //red
-    tiles[3] = new Tile(1,0,0);
+    tiles[3] = new Tile(new PVector(1,0,0));
     tiles[3].setColor(255, 0, 0);
     //green
-    tiles[4] = new Tile(0,-1,0);
+    tiles[4] = new Tile(new PVector(0,-1,0));
     tiles[4].setColor(0, 255, 0);
     //blue
-    tiles[5] = new Tile(0,1,0);
+    tiles[5] = new Tile(new PVector(0,1,0));
     tiles[5].setColor(0, 0, 255);
   }
   
@@ -57,21 +57,21 @@ class Cubie {
   void rotX(float ang, PMatrix3D rotateX) {
     this.ang.x = this.ang.x+ang;
     for(int i = 0; i < tiles.length; i++) {
-      tiles[i].localPos = rotateX.mult(tiles[i].localPos, tiles[i].localPos);
+      tiles[i].pos = rotateX.mult(tiles[i].pos, tiles[i].pos);
     }
   }
   
   void rotY(float ang, PMatrix3D rotateY) {
     this.ang.y = this.ang.y+ang;
     for(int i = 0; i < tiles.length; i++) {
-      tiles[i].localPos = rotateY.mult(tiles[i].localPos, tiles[i].localPos);
+      tiles[i].pos = rotateY.mult(tiles[i].pos, tiles[i].pos);
     }
   }
   
   void rotZ(float ang, PMatrix3D rotateZ) {
     this.ang.z = this.ang.z+ang;
     for(int i = 0; i < tiles.length; i++) {
-      tiles[i].localPos = rotateZ.mult(tiles[i].localPos, tiles[i].localPos);
+      tiles[i].pos = rotateZ.mult(tiles[i].pos, tiles[i].pos);
     }
   }
   
